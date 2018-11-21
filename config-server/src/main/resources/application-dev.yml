@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: core-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          # git 仓库配置地址
+          uri: https://github.com/sendya/sweb-cloud-config
+          # git 仓库地址下的相对地址，可以配置多个，用,分割。
+          search-paths: cloud-test-config
+          username: 18x@loacg.com
+          password:
+          default-label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:18761/eureka/

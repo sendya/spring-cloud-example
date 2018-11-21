@@ -1,0 +1,15 @@
+logging:
+  config: classpath:config/logback-dev.xml
+
+spring:
+  application:
+    name: server-01
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka
+    fetch-registry: false
+    register-with-eureka: false
+  instance:
+    metadata-map:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
